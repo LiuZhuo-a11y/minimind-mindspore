@@ -1,0 +1,29 @@
+MiniMind-MindSpore
+Copyright 2025 Liu Zhuo
+
+This product is a MindSpore re-implementation of the model architecture and
+training objectives of the MiniMind project.
+
+MiniMind
+  Project:  https://github.com/jingyaogong/minimind
+  Author:   Jingyao Gong and contributors
+  Licence:  Apache License 2.0
+
+The following are used from the upstream project unmodified and are NOT
+redistributed in this repository; they are supplied by the user through the
+--source_dir argument:
+
+  - the tokenizer files in model/
+  - the JSONL datasets in dataset/ (pretrain_t2t_mini, sft_t2t_mini, dpo,
+    rlaif, agent_rl_math)
+  - pretrained weights, if you continue training from them
+
+No upstream model weights are included in this repository. All source files
+here were written for this port; where the upstream design is mirrored
+(model configuration, prompt template, dataset field names, training
+objectives) the intent is compatibility, not copying, and the attribution
+above is retained as required by section 4(c) and 4(d) of the Apache 2.0
+licence.
+
+Third-party Python dependencies are covered by their own licences:
+MindSpore (Apache 2.0), NumPy (BSD-3-Clause), Transformers (Apache 2.0).

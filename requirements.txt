@@ -1,0 +1,27 @@
+# Runtime dependencies for MiniMind-MindSpore.
+#
+# MindSpore is NOT listed here on purpose: it is distributed as per-platform
+# wheels (Python version x CUDA version x OS), so a single pin would be wrong
+# for most readers. Install the GPU wheel that matches your machine first, e.g.
+#
+#   pip install mindspore -i https://repo.mindspore.cn/mindspore/mindspore/whl/
+#
+# and verify it with `python run_check.py` before installing the rest.
+#
+# Everything else in this repository is Python standard library plus these:
+
+numpy==1.26.4
+transformers==4.57.6
+
+# Notes
+# -----
+# * numpy is pinned because MindSpore builds are compiled against specific
+#   NumPy ABIs; NumPy 2.x will break older MindSpore wheels.
+# * transformers is used only for AutoTokenizer. The model, the training
+#   loops and the losses are implemented in MindSpore, not in transformers.
+# * Upstream MiniMind's requirements.txt includes torch, peft, trl, wandb,
+#   streamlit, flask and more; none of those are imported by this port, so
+#   they are deliberately not carried over.
+# * serve.py (the web demo) uses http.server from the standard library, so it
+#   adds nothing to this list. Only the model and the tokenizer need the
+#   packages above.

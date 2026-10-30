@@ -1,0 +1,15 @@
+# Normalise line endings in the repository; the code is developed on both
+# Windows and Linux, and CRLF in .py files causes confusing diffs.
+* text=auto eol=lf
+
+*.py     text eol=lf
+*.md     text eol=lf
+*.txt    text eol=lf
+*.json   text eol=lf
+*.sh     text eol=lf
+
+# Binary artefacts, should any be added locally
+*.ckpt   binary
+*.png    binary
+*.jpg    binary
+*.pdf    binary

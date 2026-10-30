@@ -1,0 +1,45 @@
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+env/
+.env
+.env.*
+
+# Training artifacts, logs, and external assets
+checkpoints/
+outputs/
+runs/
+logs/
+wandb/
+swanlab/
+*.ckpt
+*.ckpt.json
+*.pt
+*.pth
+*.bin
+*.safetensors
+*.onnx
+*.log
+*.png
+*.jpg
+
+# ...but figures that document the project are welcome
+!docs/img/
+!docs/img/*.png
+!docs/img/*.jpg
+
+# Datasets, tokenizer and model assets come from a separate upstream checkout
+dataset/
+data/
+model/
+
+# Editor and operating-system files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
