@@ -205,6 +205,6 @@ If you use the upstream model, data or code, cite the original project — not t
 ## Author
 
 **Liu Zhuo** — B.Eng. in Computer Science and Technology, East China Normal University.
-Developed during a research internship at the Hardware Laboratory, ECNU (2025–present).
+Developed during a research internship at the Hardware Laboratory, ECNU .
 
 Issues and corrections are welcome. If you find an op-level discrepancy against the PyTorch reference, that is exactly the kind of report this repository wants.
