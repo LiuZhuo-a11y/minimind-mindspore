@@ -156,17 +156,6 @@ python train_dpo.py --source_dir /path/to/minimind --device GPU \
   --init_ckpt ./checkpoints/sft_ms.ckpt --beta 0.1
 ```
 
-### Web demo
-
-```bash
-python serve.py --source_dir /path/to/minimind --device GPU \
-  --ckpt ./checkpoints/sft_ms.ckpt --port 8000
-# -> MiniMind MindSpore demo on http://127.0.0.1:8000
-```
-
-One page, one endpoint, no web framework: `serve.py` uses `http.server` from the standard library rather than Flask or Gradio, so serving the model adds **no dependency** to `requirements.txt`. `GET /` returns the page, `POST /api/chat` takes `{"prompt": "..."}` and returns the answer together with the token count, wall-clock time and tokens/second.
-
-It is a demo, not a service. There is no authentication (it binds to `127.0.0.1` for that reason), the model is not thread-safe so generations are serialised behind a lock, and an empty generation is reported as an explicit `empty: true` rather than a blank 200 — the same policy as the CLI.
 
 ## What I observed
 
