@@ -23,7 +23,6 @@ The answer here is not a patch. It is a re-implementation of the compute graph �
 | Gradient accumulation | Implemented | `--grad_accum` on every training script; decouples effective batch from the 11 GB limit |
 | PPO / GRPO | **Simplified** | Reward-weighted SFT; **no rollout, no clipping, no advantage** |
 | Text generation / chat / tool-call demo | Implemented | Greedy decoding only |
-| Web demo (`serve.py`) | Implemented | Stdlib `http.server`, no framework, no auth, one generation at a time |
 | Numerical parity with PyTorch | **Not done** | See *Limitations* — this is the honest gap |
 
 This is a port for **study and environment validation**, not a production training framework, and it does not claim one-to-one parity with upstream MiniMind. A component-by-component comparison — including what is *not* the same — is in [`MIGRATION_STATUS.md`](MIGRATION_STATUS.md).
