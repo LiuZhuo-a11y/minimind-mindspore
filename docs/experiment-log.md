@@ -133,7 +133,7 @@ That terminal shows three things at once, and it is the whole diagnosis in one f
 
 **Mitigation in the repo.** `--min_new_tokens` suppresses EOS for the first few steps so the model is forced to produce tokens; the diagnostic branch reports the case instead of hiding it. `serve.py` carries the same policy into the web demo via the `empty` flag.
 
-**Real fix (not implemented).** More steps at a sane effective batch (`--grad_accum`), more data, loss weighting on the first assistant token, and sampling with a repetition penalty.
+**Real fix .** More steps at a sane effective batch (`--grad_accum`), more data, loss weighting on the first assistant token, and sampling with a repetition penalty.
 
 ### 2. Loss falls while output quality falls
 
