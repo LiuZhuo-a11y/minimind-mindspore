@@ -75,7 +75,7 @@ Before any long run, 128 samples were memorised for 20 steps at learning rate 5e
 
 Two numbers matter.
 
-**The first step starts at chance.** Loss at step 1 is 8.8870. A uniform predictor over a 6400-token vocabulary costs `ln(6400) = 8.7637`, so the model begins 1.4 % above the theoretical floor — the small excess coming from an initial distribution that is not perfectly flat. This is the cheapest diagnostic in the whole project: a first loss of 5.0, or 0.1, would have pointed at a broken loss, a mis-mapped label, or logits in the wrong order, and it costs exactly one training step to rule all three out. Any project that reports a loss curve without checking its first value is leaving that check on the table.
+**The first step starts at chance.** Loss at step 1 is 8.8870. A uniform predictor over a 6400-token vocabulary costs `ln(6400) = 8.7641`, so the model begins 1.4 % above the theoretical floor — the small excess coming from an initial distribution that is not perfectly flat. This is the cheapest diagnostic in the whole project: a first loss of 5.0, or 0.1, would have pointed at a broken loss, a mis-mapped label, or logits in the wrong order, and it costs exactly one training step to rule all three out. Any project that reports a loss curve without checking its first value is leaving that check on the table.
 
 **The loss moves, and the checkpoint talks.** Twenty steps took the loss to 7.7097, a drop of **1.18 nats** that cannot happen by accident on 128 fixed samples. The resulting checkpoint answers `你好` with a fluent, correctly formatted Chinese sentence:
 
@@ -178,7 +178,7 @@ python train_sft.py --source_dir /path/to/minimind --device GPU --steps 2000 \
 | Quantity | Value | Derivation |
 |---|---|---|
 | Parameters | 80,622,336 | sum of module shapes, `vocab 6400`, `h 768`, `L 8` |
-| Uniform-predictor loss | 8.7637 | `ln(6400)` |
+| Uniform-predictor loss | 8.7641 | `ln(6400)` |
 | Overfit run, step 1 → 20 | 8.8870 → 7.7097 | logged loss, 128 samples |
 | Overfit drop | 1.18 nats | difference |
 | Pre-training step time | 0.150 s | 300.6 s ÷ 2,000 |

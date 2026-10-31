@@ -74,7 +74,7 @@ All runs used the script defaults for model shape — 768 hidden, 8 layers, 8 he
 
 Before training anything large, 128 samples were memorised for 20 steps. This is the most informative run in the project, for three reasons:
 
-- **The first step starts at chance.** Loss is 8.8870 at step 1; random guessing over a 6400-token vocabulary costs `ln(6400) = 8.7637`. The 1.4 % excess is the overhead of a uniform distribution that is not perfectly flat. If the first loss had been 5.0, or 0.1, that alone would indicate a broken loss, a mis-mapped label, or logits in the wrong order — this is the cheapest sanity check available, and it takes one step.
+- **The first step starts at chance.** Loss is 8.8870 at step 1; random guessing over a 6400-token vocabulary costs `ln(6400) = 8.7641`. The 1.4 % excess is the overhead of a uniform distribution that is not perfectly flat. If the first loss had been 5.0, or 0.1, that alone would indicate a broken loss, a mis-mapped label, or logits in the wrong order — this is the cheapest sanity check available, and it takes one step.
 - **It learns immediately.** Twenty steps at learning rate 5e-4 took the loss from 8.8870 to 7.7097 — **−1.18 nats** — which cannot happen by accident on 128 fixed samples.
 - **The checkpoint produces language.** Generating with `overfit_20.ckpt` and the prompt `你好` gives a fluent, correctly formatted Chinese answer:
 
