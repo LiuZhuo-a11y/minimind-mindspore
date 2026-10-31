@@ -74,7 +74,7 @@ A full PyTorch→MindSpore mapping table, plus the traps that did not make the l
 ├── train_grpo.py        # Simplified GRPO (reward-weighted updates)
 ├── generate.py          # Single-prompt greedy generation
 ├── eval_chat.py         # Interactive chat loop (stdin)
-├── serve.py             # Minimal web demo: HTML page + /api/chat, stdlib only
+├── serve.py             # Minimal web demo (stdlib only); not yet run against a checkpoint
 ├── eval_toolcall.py     # Tool-call format demo with three mock tools
 ├── run_check.py         # Minimal "can MindSpore see the GPU" check
 ├── docs/                # Technical report, migration notes, experiment log
@@ -205,6 +205,6 @@ If you use the upstream model, data or code, cite the original project — not t
 ## Author
 
 **Liu Zhuo** — B.Eng. in Computer Science and Technology, East China Normal University.
-Developed during a research internship at the Hardware Laboratory, ECNU .
+Developed during a research internship at the Hardware Laboratory, ECNU.
 
 Issues and corrections are welcome. If you find an op-level discrepancy against the PyTorch reference, that is exactly the kind of report this repository wants.
